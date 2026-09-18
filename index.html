@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AELLYNA | Premium Bakery & Beverages</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            bg: '#fbfbfd', /* Apple's signature off-white */
+                            text: '#1d1d1f', /* Apple's deep gray/black */
+                            gray: '#86868b',
+                            burgundy: '#7b1113', /* Apron base color */
+                            gold: '#e4b04a', /* Logo text color */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', '-apple-system', 'sans-serif'],
+                        serif: ['Cinzel', 'serif'],
+                    },
+                    letterSpacing: {
+                        tightest: '-.04em',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: var(--brand-bg);
+            color: #1d1d1f;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Apple-style Glass Nav */
+        .glass-nav {
+            background: rgba(251, 251, 253, 0.8);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        /* Subtle Fade-in Animation */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-up {
+            animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+
+        /* Light Bento Box Styling */
+        .bento-card {
+            background: #ffffff;
+            border-radius: 32px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+            overflow: hidden;
+            position: relative;
+        }
+        .bento-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        }
+        .bento-img {
+            transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .bento-card:hover .bento-img {
+            transform: scale(1.05);
+        }
+
+        /* Logo Styling to match the apron */
+        .ae-logo-mark {
+            font-family: 'Cinzel', serif;
+            position: relative;
+            display: inline-block;
+        }
+        .ae-logo-text {
+            font-family: 'Cinzel', serif;
+            letter-spacing: 0.3em;
+        }
+    </style>
+</head>
+<body class="selection:bg-brand-gold selection:text-white">
+
+    <!-- Sticky Glass Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <!-- Brand Logo (Recreated from Apron) -->
+            <a href="#" class="flex flex-col items-center group">
+                <div class="ae-logo-mark text-brand-burgundy text-3xl leading-none font-bold group-hover:scale-105 transition-transform">
+                    A<span class="text-brand-gold -ml-1">E</span><span class="text-brand-gold text-sm absolute bottom-0 -right-2">.</span>
+                </div>
+                <div class="ae-logo-text text-[8px] font-bold text-brand-burgundy mt-0.5">AELLYNA</div>
+            </a>
+            
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-brand-text/80">
+                <a href="#about" class="hover:text-brand-burgundy transition-colors">The Founder</a>
+                <a href="#menu" class="hover:text-brand-burgundy transition-colors">Menu</a>
+                <a href="#events" class="hover:text-brand-burgundy transition-colors">Events</a>
+            </div>
+            
+            <a href="https://instagram.com/aellyna.bakery" class="bg-brand-text text-white text-xs font-medium px-5 py-2 rounded-full hover:bg-brand-burgundy transition-colors">
+                Follow IG
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section (Light, Bright, Minimal) -->
+    <main class="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden px-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16">
+            
+            <!-- Left Text -->
+            <div class="flex-1 text-center md:text-left z-10 opacity-0 animate-fade-up">
+                <h2 class="text-brand-gold font-semibold tracking-widest text-xs md:text-sm mb-4 uppercase">Evolving with your taste</h2>
+                <h1 class="text-5xl md:text-7xl font-bold tracking-tightest text-brand-text mb-6 leading-[1.1]">
+                    The art of <br>
+                    <span class="text-brand-burgundy">baking.</span> Evolved.
+                </h1>
+                <p class="text-lg md:text-xl text-brand-gray font-light max-w-lg mx-auto md:mx-0 mb-10 leading-relaxed">
+                    From timeless artisanal pastries to the most sought-after seasonal drinks. We bake the trends, you taste the perfection.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start">
+                    <a href="#menu" class="bg-brand-burgundy text-white px-8 py-4 rounded-full font-medium hover:bg-black transition-colors shadow-lg shadow-brand-burgundy/20">
+                        Explore the Menu
+                    </a>
+                    <a href="#about" class="text-brand-text font-medium px-8 py-4 flex items-center gap-2 hover:text-brand-burgundy transition-colors">
+                        Meet the Founder <span class="text-xl leading-none">›</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Image (Aesthetic Food Hero) -->
+            <div class="flex-1 w-full relative opacity-0 animate-fade-up delay-200">
+                <div class="aspect-square md:aspect-[4/5] rounded-[2.5rem] overflow-hidden relative shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1000&auto=format&fit=crop" alt="Premium Bakery" class="w-full h-full object-cover">
+                    <!-- Elegant internal shadow -->
+                    <div class="absolute inset-0 shadow-[inset_0_0_100px_rgba(0,0,0,0.1)] pointer-events-none"></div>
+                </div>
+                <!-- Decorative Elements -->
+                <div class="absolute -top-6 -right-6 w-32 h-32 bg-brand-gold/10 rounded-full blur-2xl -z-10"></div>
+                <div class="absolute -bottom-10 -left-10 w-48 h-48 bg-brand-burgundy/10 rounded-full blur-3xl -z-10"></div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Founder Profile Section (The Story) -->
+    <section id="about" class="py-24 bg-white border-y border-gray-100">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            
+            <!-- Founder Image -->
+            <div class="order-2 md:order-1 aspect-square rounded-[2.5rem] overflow-hidden bg-gray-50 relative">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzLae_ponPNeXtCXC5wgCQ6GWdHr3tJzTO1QMRZAR5IfbR9vjkYXcHLtL_&s=10" alt="Aellyna Founder" class="w-full h-full object-cover">
+            </div>
+
+            <!-- Founder Text -->
+            <div class="order-1 md:order-2">
+                <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-6">Behind the Brand.</h2>
+                <p class="text-brand-gray text-lg mb-6 leading-relaxed">
+                    AELLYNA isn't just a bakery; it's a reflection of constant growth. Starting as a passion project, it has evolved into a dynamic brand that adapts to what people love—from classic buttery croissants to the latest trending cookies and craft beverages.
+                </p>
+                <p class="text-brand-gray text-lg mb-8 leading-relaxed">
+                    As an active participant in local youth business events and government-backed entrepreneurial pop-ups, our founder ensures that AELLYNA stays deeply connected with the community while bringing premium cafe experiences directly to you.
+                </p>
+                <div class="flex items-center gap-4">
+                    <div class="ae-logo-mark text-brand-burgundy text-4xl">
+                        A<span class="text-brand-gold -ml-1">E</span>.
+                    </div>
+                    <div class="h-px bg-gray-200 flex-1"></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Menu Section (Light Bento Grid) -->
+    <section id="menu" class="py-32 bg-[#fbfbfd]">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-brand-text">Masterpieces.<br><span class="text-brand-gray font-light">Baked for you.</span></h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 auto-rows-[420px]">
+                
+                <!-- Bento Card 1: Artisanal Bakery (Wide) -->
+                <div class="bento-card md:col-span-2 group">
+                    <img src="https://images.pexels.com/photos/14565958/pexels-photo-14565958.jpeg" alt="Bakery" class="bento-img absolute inset-0 w-full h-full object-cover">
+                    <!-- Light gradient overlay to ensure text readability -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-10 left-10 right-10">
+                        <h3 class="text-3xl font-bold tracking-tight text-white mb-2">Artisanal Pastries.</h3>
+                        <p class="text-white/80 text-lg">Precision in every fold. Baked fresh daily.</p>
+                    </div>
+                </div>
+
+                <!-- Bento Card 2: Cookies -->
+                <div class="bento-card md:col-span-1 group">
+                    <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?q=80&w=1000&auto=format&fit=crop" alt="Cookies" class="bento-img absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                    <div class="absolute bottom-10 left-8 right-8">
+                        <h3 class="text-2xl font-bold tracking-tight text-white mb-1">Trending Cookies.</h3>
+                        <p class="text-white/80 text-sm">Chunky, loaded, unforgettable.</p>
+                    </div>
+                </div>
+
+                <!-- Bento Card 3: Drinks -->
+                <div class="bento-card md:col-span-1 group">
+                    <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=1000&auto=format&fit=crop" alt="Drinks" class="bento-img absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                    <div class="absolute bottom-10 left-8 right-8">
+                        <h3 class="text-2xl font-bold tracking-tight text-white mb-1">Signature Sips.</h3>
+                        <p class="text-white/80 text-sm">Crafted beverages to complement.</p>
+                    </div>
+                </div>
+
+                <!-- Bento Card 4: Event Info (Wide & Clean) -->
+                <div class="bento-card md:col-span-2 bg-brand-burgundy flex flex-col justify-center items-center text-center p-12 relative">
+                    <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/noise-lines.png')] opacity-10"></div>
+                    <h3 class="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4 relative z-10">Find Us at Pop-ups</h3>
+                    <p class="text-white/80 text-lg max-w-md mx-auto relative z-10">We regularly set up shop at youth business events and government-supported carnivals. Check our IG for the next location.</p>
+                    <a href="https://instagram.com/aellyna.bakery" class="mt-8 bg-white text-brand-burgundy px-6 py-3 rounded-full font-semibold hover:scale-105 transition-transform relative z-10">
+                        View Schedule
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Minimalist Light Footer -->
+    <footer class="bg-white py-12 border-t border-gray-200">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-brand-gray">
+            <div class="flex items-center gap-2">
+                <span class="ae-logo-mark text-brand-burgundy text-xl">A<span class="text-brand-gold -ml-1">E</span>.</span>
+                <span>&copy; 2026 AELLYNA. All rights reserved.</span>
+            </div>
+            <div class="flex space-x-6 font-medium">
+                <a href="#" class="hover:text-brand-burgundy transition-colors">Instagram</a>
+                <a href="#" class="hover:text-brand-burgundy transition-colors">WhatsApp</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
